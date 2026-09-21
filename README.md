@@ -4,8 +4,12 @@
 
 This project implements a network-based Intrusion Detection System (IDS) using **Suricata**, running inside a **Kali Linux virtual machine**. It covers the setup, custom detection rules, continuous monitoring, and an automated response mechanism for detected attacks.
 
-> **Scope note:** This submission covers Task 4 requirements 1 through 4 (setup, rule configuration, continuous monitoring, and response mechanism).
+## Objectives
 
+- Set up a network-based Intrusion Detection System using Suricata.
+- Configure custom rules and alerts to detect suspicious or malicious network activity.
+- Monitor network traffic continuously for potential threats.
+- Implement a response mechanism to automatically act on detected intrusions.
 ---
 
 ## Environment
