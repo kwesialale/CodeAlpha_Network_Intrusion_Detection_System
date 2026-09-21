@@ -4,7 +4,7 @@
 
 This project implements a network-based Intrusion Detection System (IDS) using **Suricata**, running inside a **Kali Linux virtual machine**. It covers the setup, custom detection rules, continuous monitoring, and an automated response mechanism for detected attacks.
 
-> **Scope note:** This submission covers Task 4 requirements 1 through 4 (setup, rule configuration, continuous monitoring, and response mechanism). Point 5, dashboard visualization, is optional per the task instructions and is not included in this submission.
+> **Scope note:** This submission covers Task 4 requirements 1 through 4 (setup, rule configuration, continuous monitoring, and response mechanism).
 
 ---
 
@@ -97,7 +97,7 @@ sudo systemctl status suricata
 /usr/bin/suricata -D --af-packet -c /etc/suricata/suricata.yaml --pidfile /var/run/suricata/suricata.pid
 ```
 
-(See `screenshots/01-suricata-service-active.png`.)
+![Suricata service active](01-suricata-service-active.png)
 
 ---
 
@@ -146,8 +146,14 @@ sudo ping -c 200 -i 0.01 10.0.0.1
 This sends 200 ICMP echo requests at ~100 packets/second, well above both rule thresholds.
 
 **Evidence:**
-- `screenshots/02-ping-flood-command.png` — the flood command running, showing successful ICMP replies from the gateway.
-- `screenshots/03-suricata-alerts-firing.png` — `fast.log` populated with repeated `PING FLOOD DETECTION` alerts for both the "Rapid ICMP" (sid:1000001) and "Sustained ICMP" (sid:1000002) rules, each showing the correct source (`10.0.0.2`) and destination (`10.0.0.1`) with accurate timestamps.
+
+![Ping flood command](02-ping-flood-command.png)
+  
+The flood command running, showing successful ICMP replies from the gateway.
+
+![Suricata alerts firing](03-suricata-alerts-firing.png)
+
+`fast.log` populated with repeated `PING FLOOD DETECTION` alerts for both the "Rapid ICMP" (sid:1000001) and "Sustained ICMP" (sid:1000002) rules, each showing the correct source (`10.0.0.2`) and destination (`10.0.0.1`) with accurate timestamps.
 
 Sample alert line from the log:
 
@@ -176,8 +182,6 @@ CodeAlpha_Network_Intrusion_Detection_System/
     └── 03-suricata-alerts-firing.png
 ```
 
-> Note: add your three screenshots into the `screenshots/` folder with the filenames referenced above before pushing to GitHub.
-
 ---
 
 ## How to Reproduce
@@ -197,4 +201,11 @@ CodeAlpha_Network_Intrusion_Detection_System/
 
 ## Summary
 
-This project demonstrates a functioning network intrusion detection and basic response pipeline: Suricata detects ICMP flood-style denial-of-service behavior using custom-written rules, runs continuously as a background service, and triggers an automated firewall-based response when an attack is detected — fulfilling Task 4, requirements 1 through 4.
+This project demonstrates a functioning network intrusion detection and basic response pipeline: Suricata detects ICMP flood-style denial-of-service behavior using custom-written rules, runs continuously as a background service, and triggers an automated firewall-based response when an attack is detected 
+
+---
+
+Author
+
+Alale Matthew 
+Cybersecurity Intern
